@@ -12,6 +12,5 @@
   "trailingComma": "es5",
   "importOrder": ["^@wannabe/(.*)$", "^[./]"],
   "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true,
-  "bracketSameLine": true
+  "importOrderSortSpecifiers": true
 }

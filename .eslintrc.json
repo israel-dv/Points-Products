@@ -25,9 +25,7 @@
     "no-multi-spaces": ["error"],
     "no-console": "warn",
     "no-restricted-imports": "off",
-    "react/require-default-props": "warn",
-    "react/react-in-jsx-scope": "off",
-    "react/style-prop-object": "off",
+    "react/require-default-props": "off",
     "react/jsx-filename-extension": [
       1,
       { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
@@ -44,6 +42,10 @@
     "semi": "off",
     "object-curly-newline": "off",
     "implicit-arrow-linebreak": "off",
+    "react/jsx-closing-bracket-location": [1, "tag-aligned"],
+    "import/prefer-default-export": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/style-prop-object": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
