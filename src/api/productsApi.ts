@@ -1,4 +1,4 @@
-import { ProductsProps } from '../types/products.types'
+import { ProductsProps } from '../utils/types/products.types'
 import { apiClient } from './client'
 
 export const getProducts = async (): Promise<ProductsProps[]> => {

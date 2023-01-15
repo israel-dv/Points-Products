@@ -5,7 +5,7 @@ import {
 } from '@tanstack/react-query'
 
 import { getProducts } from '../api/productsApi'
-import { ProductsProps } from '../types/products.types'
+import { ProductsProps } from '../utils/types/products.types'
 
 const QUERY_KEY = 'products'
 
