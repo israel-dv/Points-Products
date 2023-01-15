@@ -1,11 +1,16 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
 
-import { CardPoints } from '../../components/CardPoints'
+import { CardPoints } from '../../components/Card/CardPoints'
 import { SafeLayout } from '../../components/SafeLayout'
 import { Typography } from '../../components/Typography/Typography'
 import { useProducts } from '../../hooks/useProducts'
-import { NAME, POINTS, WELCOME_BACK } from '../../utils/constants/messages'
+import {
+  MOVEMENTS,
+  NAME,
+  POINTS,
+  WELCOME_BACK,
+} from '../../utils/constants/messages'
 import { COLORS } from '../../utils/constants/productsUI'
 import { homeStyles } from './HomeStyles'
 
@@ -23,7 +28,12 @@ export const Home = () => {
         fontWeight="bold"
         style={{ color: COLORS.gray100, paddingVertical: 20 }}
       />
-      <CardPoints month="december" points="10,000 pts" />
+      <CardPoints month="Diciembre" points="10,000 pts" />
+      <Typography.Text2
+        text={MOVEMENTS}
+        fontWeight="bold"
+        style={{ color: COLORS.gray100, paddingVertical: 20 }}
+      />
     </SafeLayout>
   )
 }
