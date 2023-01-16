@@ -43,10 +43,8 @@
     "semi": "off",
     "object-curly-newline": "off",
     "implicit-arrow-linebreak": "off",
-    "react/jsx-closing-bracket-location": [1, "tag-aligned"],
     "import/prefer-default-export": "off",
     "react/react-in-jsx-scope": "off",
-    "react/style-prop-object": "off",
     "import/extensions": [
       "error",
       "ignorePackages",

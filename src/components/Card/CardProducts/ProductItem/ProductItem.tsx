@@ -1,11 +1,11 @@
 import React from 'react'
 import { Image, TouchableOpacity, View } from 'react-native'
 
-import { COLORS } from '../../../utils/constants/productsUI'
-import { formatDate } from '../../../utils/functions/formatDate'
-import { ProductsProps } from '../../../utils/types/products.types'
-import { Substrac } from '../../Icons/Substrac'
-import { Typography } from '../../Typography/Typography'
+import { COLORS } from '../../../../utils/constants/productsUI'
+import { formatDate } from '../../../../utils/functions/formatDate'
+import { ProductsProps } from '../../../../utils/types/products.types'
+import { Substrac } from '../../../Icons/Substrac'
+import { Typography } from '../../../Typography/Typography'
 import { productItemStyles } from './ProductItemStyles'
 
 type ProductItemProps = ProductsProps & {
@@ -30,7 +30,7 @@ export const ProductItem = ({
           <Image style={productItemStyles.image} source={{ uri: image }} />
           <View style={productItemStyles.productDetails}>
             <Typography.Text2 text={product} fontWeight="bold" />
-            <Typography.Text2 text={date} />
+            <Typography.Text3 text={date} />
           </View>
         </View>
         <View style={productItemStyles.productPoints}>

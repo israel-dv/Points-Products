@@ -4,11 +4,12 @@ import { Text } from 'react-native'
 import { COLORS } from '../../../utils/constants/productsUI'
 import { HeadingType } from '../../../utils/types/fonts.types'
 
-export const Heading3 = ({
+export const Heading2 = ({
   text,
-  fontSize = 20,
+  fontSize = 24,
   textAlign = 'auto',
   color = COLORS.black,
+  fontWeight = 'normal',
   style,
 }: HeadingType): React.ReactElement => {
   return (
@@ -18,7 +19,7 @@ export const Heading3 = ({
           fontSize,
           textAlign,
           color,
-          fontWeight: '800',
+          fontWeight,
         },
         style,
       ]}

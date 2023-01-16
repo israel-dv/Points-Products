@@ -46,5 +46,6 @@ export const detailsStyles = StyleSheet.create({
   },
   button: {
     marginTop: 47,
+    marginBottom: 20,
   },
 })

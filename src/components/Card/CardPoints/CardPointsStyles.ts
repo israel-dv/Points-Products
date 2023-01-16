@@ -4,6 +4,7 @@ import { COLORS } from '../../../utils/constants/productsUI'
 
 export const cardPointsStyles = StyleSheet.create({
   card: {
+    elevation: 1,
     borderRadius: 20,
     width: '100%',
     backgroundColor: COLORS.deepBlue,
@@ -20,9 +21,10 @@ export const cardPointsStyles = StyleSheet.create({
     paddingTop: 7,
   },
   cardShadow: {
-    shadowOffset: { width: 0, height: 4 },
     shadowColor: 'black',
+    shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.5,
     shadowRadius: 2,
+    elevation: 5,
   },
 })

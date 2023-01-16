@@ -1,16 +1,8 @@
 import React from 'react'
-import { Text, TextStyle } from 'react-native'
+import { Text } from 'react-native'
 
 import { COLORS } from '../../../utils/constants/productsUI'
-
-type Heading1Props = {
-  text: string
-  fontSize?: number
-  textAlign?: 'center' | 'right' | 'left' | 'justify' | 'auto'
-  color?: string
-  style?: TextStyle
-  fontWeight?: 'bold' | 'normal' | '100' | '200' | '300'
-}
+import { HeadingType } from '../../../utils/types/fonts.types'
 
 export const Heading1 = ({
   text,
@@ -19,7 +11,7 @@ export const Heading1 = ({
   color = COLORS.black,
   fontWeight = 'normal',
   style,
-}: Heading1Props): React.ReactElement => {
+}: HeadingType): React.ReactElement => {
   return (
     <Text
       style={[

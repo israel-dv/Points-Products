@@ -15,7 +15,6 @@ import {
   POINTS,
   WELCOME_BACK,
 } from '../../utils/constants/messages'
-import { COLORS } from '../../utils/constants/productsUI'
 import { ProductsProps } from '../../utils/types/products.types'
 import { homeStyles } from './HomeStyles'
 
@@ -67,7 +66,7 @@ export const Home = () => {
         <Typography.Text2
           text={POINTS}
           fontWeight="bold"
-          style={{ color: COLORS.gray100, paddingVertical: 20 }}
+          style={homeStyles.text2}
         />
         <CardPoints
           month={MONTH}
@@ -76,7 +75,7 @@ export const Home = () => {
         <Typography.Text2
           text={MOVEMENTS}
           fontWeight="bold"
-          style={{ color: COLORS.gray100, paddingVertical: 20 }}
+          style={homeStyles.text2}
         />
         <CardProducts products={listProducts} />
         {isShowAllProducts ? (

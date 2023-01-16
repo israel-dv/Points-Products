@@ -1,9 +1,9 @@
 import { Text } from 'react-native'
 
 import { TextRegulartype } from '../../../utils/types/fonts.types'
-import { textStyles } from './Text1Styles'
+import { textStyles } from './Text3Styles'
 
-export const Text1 = ({
+export const Text3 = ({
   text,
   style,
   fontWeight = 'normal',

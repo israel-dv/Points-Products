@@ -9,5 +9,4 @@ export const cardProductsStyles = StyleSheet.create({
     paddingVertical: 20,
     height: 350,
   },
-  scrollContainer: {},
 })

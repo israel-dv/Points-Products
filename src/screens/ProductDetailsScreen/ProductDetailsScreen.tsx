@@ -4,16 +4,25 @@ import { Image, ScrollView, View } from 'react-native'
 
 import { RoundedButton } from '../../components/RoundedButton'
 import { Typography } from '../../components/Typography/Typography'
+import { ACCEPT } from '../../utils/constants/buttons'
+import {
+  ACUMULATION,
+  PRODUCT_DATE,
+  PRODUCT_DETAILS,
+} from '../../utils/constants/messages'
 import { formatDate } from '../../utils/functions/formatDate'
 import { StackParamList } from '../../utils/types/navigators.types'
-import { detailsStyles } from './ProductDetailsScreen'
+import { detailsStyles } from './ProductDetailsStyles'
 
 type ProductDetailsProps = NativeStackScreenProps<
   StackParamList,
   'ProductDetails'
 >
 
-export const ProductDetails = ({ route, navigation }: ProductDetailsProps) => {
+export const ProductDetailsScreen = ({
+  route,
+  navigation,
+}: ProductDetailsProps) => {
   const { goBack } = navigation
   const { createdAt, image, product, points } = route.params
   const date = formatDate(createdAt)
@@ -35,23 +44,23 @@ export const ProductDetails = ({ route, navigation }: ProductDetailsProps) => {
           <Image style={detailsStyles.cardImage} source={{ uri: image }} />
         </View>
         <Typography.Text2
-          text="Detalles del producto:"
+          text={PRODUCT_DETAILS}
           fontWeight="bold"
           style={detailsStyles.detailsText}
         />
         <Typography.Text1
-          text={`Comprado el ${date}`}
+          text={`${PRODUCT_DATE}  ${date}`}
           fontWeight="bold"
           style={detailsStyles.dateText}
         />
         <Typography.Text2
-          text="Con esta compra acumulaste:"
+          text={ACUMULATION}
           fontWeight="bold"
           style={detailsStyles.acumulateText}
         />
         <Typography.Heading3 text={`${points.toLocaleString('en-EN')} pts`} />
         <RoundedButton
-          text="Aceptar"
+          text={ACCEPT}
           handleClcik={goBack}
           style={detailsStyles.button}
         />

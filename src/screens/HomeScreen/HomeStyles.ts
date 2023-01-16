@@ -1,5 +1,7 @@
 import { StyleSheet } from 'react-native'
 
+import { COLORS } from '../../utils/constants/productsUI'
+
 export const homeStyles = StyleSheet.create({
   container: {
     display: 'flex',
@@ -20,6 +22,10 @@ export const homeStyles = StyleSheet.create({
   buttonsContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 20,
+    marginVertical: 20,
+  },
+  text2: {
+    color: COLORS.gray100,
+    paddingVertical: 20,
   },
 })

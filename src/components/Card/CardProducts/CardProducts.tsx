@@ -5,7 +5,7 @@ import { ScrollView, View } from 'react-native'
 import { ProductDetailsNavigatorProp } from '../../../utils/types/navigators.types'
 import { ProductsProps } from '../../../utils/types/products.types'
 import { cardProductsStyles } from './CardProductsStyles'
-import { ProductItem } from './ProductItem'
+import { ProductItem } from './ProductItem/ProductItem'
 
 type CardProductsProps = {
   products?: ProductsProps[]
@@ -15,6 +15,7 @@ export const CardProducts = ({
   products,
 }: CardProductsProps): React.ReactElement => {
   const { navigate } = useNavigation<ProductDetailsNavigatorProp>()
+
   const handleProduct = (product: ProductsProps) => {
     navigate('ProductDetails', { ...product })
   }
