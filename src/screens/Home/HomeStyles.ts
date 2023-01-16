@@ -9,6 +9,14 @@ export const homeStyles = StyleSheet.create({
     display: 'flex',
     marginTop: 27,
   },
+  cardList: {
+    backgroundColor: 'white',
+    borderRadius: 10,
+    height: 350,
+    width: '100%',
+    paddingVertical: 20,
+    paddingHorizontal: 10,
+  },
   buttonsContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',

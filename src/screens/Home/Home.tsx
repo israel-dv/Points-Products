@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { View } from 'react-native'
+import { ScrollView, View } from 'react-native'
 
 import { CardPoints } from '../../components/Card/CardPoints'
 import { CardProducts } from '../../components/Card/CardProducts'
@@ -9,6 +9,7 @@ import { Typography } from '../../components/Typography/Typography'
 import { useProducts } from '../../hooks/useProducts'
 import { EVERYTHING, REDEEM, WON } from '../../utils/constants/buttons'
 import {
+  MONTH,
   MOVEMENTS,
   NAME,
   POINTS,
@@ -37,10 +38,6 @@ export const Home = () => {
     }
   }, [products])
 
-  if (isLoading) {
-    return <View />
-  }
-
   const handleRedeemProducts = () => {
     setisShowAllProducts(false)
     setListProducts(listProducts.filter((product) => !product.is_redemption))
@@ -56,41 +53,47 @@ export const Home = () => {
     setListProducts(products ?? [])
   }
 
+  if (isLoading) {
+    return <View />
+  }
+
   return (
     <SafeLayout>
-      <View style={homeStyles.titlesContainer}>
-        <Typography.Heading3 text={WELCOME_BACK} />
-        <Typography.Text1 text={NAME} />
-      </View>
-      <Typography.Text2
-        text={POINTS}
-        fontWeight="bold"
-        style={{ color: COLORS.gray100, paddingVertical: 20 }}
-      />
-      <CardPoints
-        month="Diciembre"
-        points={`${points.toLocaleString('en-EN')} pts`}
-      />
-      <Typography.Text2
-        text={MOVEMENTS}
-        fontWeight="bold"
-        style={{ color: COLORS.gray100, paddingVertical: 20 }}
-      />
-      <CardProducts products={listProducts} />
-      {isShowAllProducts ? (
-        <View style={homeStyles.buttonsContainer}>
-          <RoundedButton handleClcik={handleWonProducts} text={WON} />
-          <RoundedButton
-            handleClcik={handleRedeemProducts}
-            text={REDEEM}
-            style={{ marginLeft: 10 }}
-          />
+      <ScrollView>
+        <View style={homeStyles.titlesContainer}>
+          <Typography.Heading3 text={WELCOME_BACK} />
+          <Typography.Text1 text={NAME} />
         </View>
-      ) : (
-        <View style={homeStyles.buttonsContainer}>
-          <RoundedButton handleClcik={handleAllProducts} text={EVERYTHING} />
-        </View>
-      )}
+        <Typography.Text2
+          text={POINTS}
+          fontWeight="bold"
+          style={{ color: COLORS.gray100, paddingVertical: 20 }}
+        />
+        <CardPoints
+          month={MONTH}
+          points={`${points.toLocaleString('en-EN')} pts`}
+        />
+        <Typography.Text2
+          text={MOVEMENTS}
+          fontWeight="bold"
+          style={{ color: COLORS.gray100, paddingVertical: 20 }}
+        />
+        <CardProducts products={listProducts} />
+        {isShowAllProducts ? (
+          <View style={homeStyles.buttonsContainer}>
+            <RoundedButton handleClcik={handleWonProducts} text={WON} />
+            <RoundedButton
+              handleClcik={handleRedeemProducts}
+              text={REDEEM}
+              style={{ marginLeft: 10 }}
+            />
+          </View>
+        ) : (
+          <View style={homeStyles.buttonsContainer}>
+            <RoundedButton handleClcik={handleAllProducts} text={EVERYTHING} />
+          </View>
+        )}
+      </ScrollView>
     </SafeLayout>
   )
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import { Image, TouchableOpacity, View } from 'react-native'
 
 import { COLORS } from '../../../utils/constants/productsUI'
+import { formatDate } from '../../../utils/functions/formatDate'
 import { ProductsProps } from '../../../utils/types/products.types'
 import { Substrac } from '../../Icons/Substrac'
 import { Typography } from '../../Typography/Typography'
@@ -20,10 +21,7 @@ export const ProductItem = ({
   product,
   handleClick,
 }: ProductItemProps): React.ReactElement => {
-  const date = new Date(createdAt)
-  const dateFormat = `${date.getDay()} ${date.toLocaleString('es-ES', {
-    month: 'long',
-  })}, ${date.getFullYear()}`
+  const date = formatDate(createdAt)
 
   return (
     <TouchableOpacity onPress={handleClick} activeOpacity={0.5}>
@@ -32,7 +30,7 @@ export const ProductItem = ({
           <Image style={productItemStyles.image} source={{ uri: image }} />
           <View style={productItemStyles.productDetails}>
             <Typography.Text2 text={product} fontWeight="bold" />
-            <Typography.Text2 text={dateFormat} />
+            <Typography.Text2 text={date} />
           </View>
         </View>
         <View style={productItemStyles.productPoints}>

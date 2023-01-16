@@ -4,6 +4,7 @@ export const COLORS = {
   gray100: '#9B9898',
   lightGray: '#F8F8F8',
   greenLmon: '#00B833',
+  lightBlue: '#CFD6FF',
 }
 
 export const SHADOWS = {
