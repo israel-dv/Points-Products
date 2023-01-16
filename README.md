@@ -21,14 +21,27 @@ Asegurese de tener instalado Node(LTS) y Expo CLI
 Para ejecutar el proyecto dependiendo del SO que este usando, necesitara tener adicionalmnte XCode y/o Android Studio para probar en simuladores o dispositivos fisicos
 
 1. Clone este resositorio
-   `bash git clone git@github.com:israel-dv/Points-Products.git`
+````bash 
+git clone git@github.com:israel-dv/Points-Products.git
+````
 
 2. Instale las dependencias
-   `bash yarn` o `bash yarn add`
+```bash 
+yarn
+```  
+ó 
+```bash 
+yarn add
+```
 
 3. Ejecute el proyecto
-   `bash yarn expo` o
-   `bash npx expo start`
+```bash 
+yarn expo
+``` 
+ó 
+```bash 
+npx expo start
+```
 
 4. Abra la aplicacion en iOS o Android
 
