@@ -5,4 +5,13 @@ export const homeStyles = StyleSheet.create({
     display: 'flex',
     height: '100%',
   },
+  titlesContainer: {
+    display: 'flex',
+    marginTop: 27,
+  },
+  buttonsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 20,
+  },
 })

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, ViewStyle } from 'react-native'
+import { Text, TextStyle } from 'react-native'
 
 import { COLORS } from '../../../utils/constants/productsUI'
 
@@ -8,7 +8,7 @@ type Heading1Props = {
   fontSize?: number
   textAlign?: 'center' | 'right' | 'left' | 'justify' | 'auto'
   color?: string
-  style?: ViewStyle
+  style?: TextStyle
 }
 
 export const Heading3 = ({
@@ -20,13 +20,15 @@ export const Heading3 = ({
 }: Heading1Props): React.ReactElement => {
   return (
     <Text
-      style={{
-        fontSize,
-        textAlign,
-        color,
-        fontWeight: '800',
-        ...style,
-      }}
+      style={[
+        {
+          fontSize,
+          textAlign,
+          color,
+          fontWeight: '800',
+        },
+        style,
+      ]}
     >
       {text}
     </Text>

@@ -23,6 +23,6 @@ export const cardPointsStyles = StyleSheet.create({
     shadowOffset: { width: 0, height: 4 },
     shadowColor: 'black',
     shadowOpacity: 0.5,
-    shadowRadius: 3,
+    shadowRadius: 2,
   },
 })

@@ -19,6 +19,7 @@
   },
   "plugins": ["react", "react-native", "eslint-plugin-import"],
   "rules": {
+    "camelcase": ["error", { "ignoreDestructuring": true }],
     "arrow-body-style": "off",
     "comma-dangle": "off",
     "no-unused-vars": ["warn"],
