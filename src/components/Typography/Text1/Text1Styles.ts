@@ -5,5 +5,6 @@ export const textStyles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '400',
     lineHeight: 21.86,
+    fontFamily: 'Avenir',
   },
 })

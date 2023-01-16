@@ -20,6 +20,7 @@ export const Heading1 = ({
           textAlign,
           color,
           fontWeight,
+          fontFamily: 'Avenir',
         },
         style,
       ]}

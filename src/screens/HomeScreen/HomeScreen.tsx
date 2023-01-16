@@ -3,12 +3,15 @@ import { ScrollView, View } from 'react-native'
 
 import { CardPoints } from '../../components/Card/CardPoints'
 import { CardProducts } from '../../components/Card/CardProducts'
+import { LoadingErrorLayout } from '../../components/Layouts/LoadingErrorLayout'
+import { SafeLayout } from '../../components/Layouts/SafeLayout'
 import { RoundedButton } from '../../components/RoundedButton'
-import { SafeLayout } from '../../components/SafeLayout'
 import { Typography } from '../../components/Typography/Typography'
 import { useProducts } from '../../hooks/useProducts'
 import { EVERYTHING, REDEEM, WON } from '../../utils/constants/buttons'
 import {
+  ERROR,
+  LOADING,
   MONTH,
   MOVEMENTS,
   NAME,
@@ -18,8 +21,25 @@ import {
 import { ProductsProps } from '../../utils/types/products.types'
 import { homeStyles } from './HomeStyles'
 
-export const Home = () => {
-  const { data: products, isLoading, isError } = useProducts()
+/**
+ * Esta es una funcion de muestra de como se se pueden cachar errores
+ * cuando hacemos llamadas al API. Con esto evitamos el uso de try - catch
+ * en la funcion de peticion -> api/productApi/getProducts y cachamos el error
+ * en dentro de nuestro custom hook o podemos pasarlo por parametro
+ * @param error
+ */
+function handleError(error: Error) {
+  // ...Aqui van los requisito necesarios cuando suceda el error/
+  // Podemos mostrar un mensaje (ej. Alerts), trackear el error en aguna plataforma, etc.
+  console.error(error)
+}
+
+export const Home = (): React.ReactElement => {
+  const {
+    data: products,
+    isLoading,
+    isError,
+  } = useProducts({ onError: handleError })
 
   const [listProducts, setListProducts] = useState<ProductsProps[]>([])
   const [isShowAllProducts, setisShowAllProducts] = useState<boolean>(true)
@@ -52,16 +72,12 @@ export const Home = () => {
     setListProducts(products ?? [])
   }
 
-  if (isLoading || isError) {
-    return (
-      <View style={homeStyles.containerLoading}>
-        <Typography.Heading1
-          text="Cargando..."
-          fontWeight="bold"
-          style={homeStyles.textLoading}
-        />
-      </View>
-    )
+  if (isLoading) {
+    return <LoadingErrorLayout type="loading" />
+  }
+
+  if (isError) {
+    return <LoadingErrorLayout type="error" />
   }
 
   return (

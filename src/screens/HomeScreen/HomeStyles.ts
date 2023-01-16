@@ -28,13 +28,4 @@ export const homeStyles = StyleSheet.create({
     color: COLORS.gray100,
     paddingVertical: 20,
   },
-  containerLoading: {
-    width: '100%',
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  textLoading: {
-    color: COLORS.gray100,
-  },
 })
