@@ -58,7 +58,9 @@ export const ProductDetailsScreen = ({
           fontWeight="bold"
           style={detailsStyles.acumulateText}
         />
-        <Typography.Heading3 text={`${points.toLocaleString('en-EN')} pts`} />
+        <Typography.Heading3
+          text={`${points.toLocaleString('en-EN')} puntos`}
+        />
         <RoundedButton
           text={ACCEPT}
           handleClcik={goBack}

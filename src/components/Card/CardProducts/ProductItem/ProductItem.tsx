@@ -24,7 +24,7 @@ export const ProductItem = ({
   const date = formatDate(createdAt)
 
   return (
-    <TouchableOpacity onPress={handleClick} activeOpacity={0.5}>
+    <TouchableOpacity onPress={handleClick} activeOpacity={0.5} key={id}>
       <View style={productItemStyles.container}>
         <View style={productItemStyles.leftContainer}>
           <Image style={productItemStyles.image} source={{ uri: image }} />
@@ -35,9 +35,9 @@ export const ProductItem = ({
         </View>
         <View style={productItemStyles.productPoints}>
           <Typography.Text1
-            text={is_redemption ? '+' : '-'}
+            text={is_redemption ? '-' : '+'}
             fontWeight="bold"
-            style={{ color: is_redemption ? COLORS.greenLmon : 'red' }}
+            style={{ color: is_redemption ? 'red' : COLORS.greenLmon }}
           />
           <Typography.Text1 text={points.toString()} fontWeight="bold" />
           <View style={{ marginLeft: 15 }}>

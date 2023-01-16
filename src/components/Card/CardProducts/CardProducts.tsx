@@ -22,7 +22,7 @@ export const CardProducts = ({
 
   return (
     <View style={cardProductsStyles.container}>
-      <ScrollView style={{ backgroundColor: 'white' }}>
+      <ScrollView>
         {products?.map((product) => (
           <ProductItem
             key={product.id}

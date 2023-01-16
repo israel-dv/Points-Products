@@ -30,7 +30,7 @@ export const Home = () => {
       setListProducts(products)
       const totalPoints = products
         .filter((product) => !product.is_redemption)
-        .map((prouct) => prouct.points)
+        .map((product) => product.points)
         .reduce((acumulator, actualValue) => acumulator + actualValue)
 
       setPoints(totalPoints)
@@ -52,8 +52,16 @@ export const Home = () => {
     setListProducts(products ?? [])
   }
 
-  if (isLoading) {
-    return <View />
+  if (isLoading || isError) {
+    return (
+      <View style={homeStyles.containerLoading}>
+        <Typography.Heading1
+          text="Cargando..."
+          fontWeight="bold"
+          style={homeStyles.textLoading}
+        />
+      </View>
+    )
   }
 
   return (
