@@ -2,7 +2,7 @@
 
 Point Products es una app que muestra los productos que has comprado y los puntos que te han brindado por cada producto, para acumular puntos por cada compra y canjearlos. Los datos de productos provien de una API publica que puedes consultar en el cliente de la app.
 
-## 3rd Libraries
+## 3rd Party Libraries 🥳
 
 Estas son algunas librerias externas que se usaron para obtener un mejor rendimiento de la app y/o para un mejor uso:
 
